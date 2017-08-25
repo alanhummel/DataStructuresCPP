@@ -1,0 +1,57 @@
+#------------------------------------------------------------------------------
+
+SOURCEDOUBLELINKEDLIST=DoubleLinkedListTest.cpp
+PROGRAMDOUBLELINKEDLIST=doublelinkedlist
+
+SOURCELINKEDLIST=LinkedListTest.cpp
+PROGRAMLINKEDLIST=linkedlist
+
+SOURCEQUEUE=QueueTest.cpp
+PROGRAMQUEUE=queue
+
+SOURCESTACK=StackTest.cpp
+PROGRAMSTACK=stack
+
+MYINCLUDES=/home/scale/g++Projects/gLib/
+
+MYLIBRARIES=fltk
+CC=g++
+
+#------------------------------------------------------------------------------
+
+
+
+all: $(PROGRAMDOUBLELINKEDLIST) $(PROGRAMLINKEDLIST) $(PROGRAMQUEUE) $(PROGRAMSTACK)
+
+$(PROGRAMDOUBLELINKEDLIST): $(SOURCEDOUBLELINKEDLIST)
+
+	$(CC) $(SOURCEDOUBLELINKEDLIST) -o$(PROGRAMDOUBLELINKEDLIST)
+
+
+$(PROGRAMLINKEDLIST): $(SOURCELINKEDLIST)
+
+	$(CC) $(SOURCELINKEDLIST) -o$(PROGRAMLINKEDLIST)
+
+
+$(PROGRAMQUEUE): $(SOURCEQUEUE)
+
+	$(CC) $(SOURCEQUEUE) -o$(PROGRAMQUEUE)
+
+
+$(PROGRAMSTACK): $(SOURCESTACK)
+
+	$(CC) $(SOURCESTACK) -o$(PROGRAMSTACK)
+
+clean:
+
+	rm -f $(PROGRAMDOUBLELINKEDLIST)
+
+	rm -f $(PROGRAMLINKEDLIST)
+
+	rm -f $(PROGRAMQUEUE)
+
+	rm -f $(PROGRAMSTACK)
+
+
+
+
